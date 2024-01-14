@@ -1,0 +1,101 @@
+<ScreenRegister>:
+    name: 'SignInScreen'
+
+    canvas.before:
+        Color:
+            rgba: 0.5,0.5,0.5,0.5
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'group_assets/images/RegisterBack.jpg'
+
+    MDBoxLayout:
+        orientation: "vertical"
+        adaptive_height: False
+        padding: dp(50)
+        spacing: dp(10)
+
+        MDLabel:
+            id: label
+            text: 'Register'
+            font_size: dp(40)
+            color: 0,0,0,0.85
+            halign: 'center'
+            bold: True
+        
+        MDTextField:
+            id: username_field
+            hint_text: 'Username'
+            hint_text_color_normal:  0,0,0,0.5
+            hint_text_color_focus: 0,0,0,1
+            line_color_normal: 0.2,0.8,0.2,.5
+            line_color_focus: 0.2,0.8,0.2,1
+            text_color_normal:0,1,1,0.5
+            text_color_focus: 0,1,1,1
+            icon_left: 'account'
+        MDTextField:
+            id: email_field
+            hint_text: 'Email Adress'
+            hint_text_color_normal:  0,0,0,0.5
+            hint_text_color_focus: 0,0,0,1
+            line_color_normal: 0.2,0.8,0.2,.5
+            line_color_focus: 0.2,0.8,0.2,1
+            text_color_normal:0,1,1,0.5
+            text_color_focus: 0,1,1,1
+            icon_left: 'mailbox'
+        MDTextField:
+            id: password_field
+            hint_text: 'Password'
+            password: True
+            hint_text_color_normal:  0,0,0,0.5
+            hint_text_color_focus: 0,0,0,1
+            line_color_normal: 0.2,0.8,0.2,.5
+            line_color_focus: 0.2,0.8,0.2,1
+            text_color_normal:0,1,1,0.5
+            text_color_focus: 0,1,1,1
+            icon_left: 'key'
+        MDTextField:
+            id: repassword_field
+            hint_text: 'Re-enter Password'
+            password: True
+            hint_text_color_normal:  0,0,0,0.5
+            hint_text_color_focus: 0,0,0,1
+            line_color_normal: 0.2,0.8,0.2,.5
+            line_color_focus: 0.2,0.8,0.2,1
+            text_color_normal:0,1,1,0.5
+            text_color_focus: 0,1,1,1
+            icon_left: 'key-alert'
+        MDTextField:
+            id: phonenumber_field
+            hint_text: 'Phone Number(HK)'
+            hint_text_color_normal:  0,0,0,0.5
+            hint_text_color_focus: 0,0,0,1
+            line_color_normal: 0.2,0.8,0.2,.5
+            line_color_focus: 0.2,0.8,0.2,1
+            text_color_normal:0,1,1,0.5
+            text_color_focus: 0,1,1,1
+            icon_left: 'phone'
+
+        MDFillRoundFlatIconButton:
+            icon: 'backspace'
+            text: 'Clear   '
+            md_bg_color: 0,0,0,0.8
+            on_press: root.Clear()   
+            pos_hint: {"center_x": .5}
+            size_hint: .35,None
+
+        MDFillRoundFlatIconButton:
+            icon: 'account'
+            text: 'Register'
+            on_press: root.Regsiter()
+            pos_hint: {"center_x": .5}
+            size_hint: .35,None
+
+        MDFillRoundFlatIconButton:
+            icon: 'home'
+            text: 'Home'
+            md_bg_color: 0.7,0,0,0.8
+            pos_hint: {"center_x": .5}
+            size_hint: .35,None
+            on_release: 
+                app.back_to_main()

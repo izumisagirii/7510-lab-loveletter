@@ -1,0 +1,102 @@
+<LoginButton@MagicBehavior+MDFillRoundFlatIconButton>
+    on_release: 
+        self.grow()
+        app.show_screen('ScreenLogin')
+    text:"LOGIN"
+    icon: "account"
+    text_color: app.theme['icon']
+    icon_color: app.theme['icon']
+    md_bg_color: app.theme['button']
+    font_size: dp(25)
+<FunctionButton@MagicBehavior+MDFloatingActionButton>
+    on_release: 
+        self.grow()
+    icon_color: app.theme['icon']
+    md_bg_color: app.theme['button']
+<FunctionLabel@MDLabel>
+    halign: "center"
+    theme_text_color: "Custom"
+    text_color: app.theme['text']
+
+<ScreenMain>:
+    FitImage:
+        size_hint_y: .6
+        pos_hint:{"top": 1}
+        source: 'https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg'
+    #MDLabel:
+    #    halign: "left"
+    #    pos_hint: {"center_x": 0.7, "center_y": .85}
+    #    text: 'Little\n Love\n  Letter(logo)'
+    MDLabel:
+        size_hint_y: .4
+        pos_hint: {"bottom": 1}
+        md_bg_color: app.theme['bg']
+    MDLabel:
+        halign: "left"
+        theme_text_color: "Custom"
+        text_color: app.theme['label']
+        pos_hint: {"center_x": .7, "center_y": .23}
+        text: root.text
+        italic: True
+        font_size: dp(20)
+    MDLabel:
+        halign: "left"
+        pos_hint: {"center_x": .7, "center_y": .31}
+        theme_text_color: "Custom"
+        text_color: app.theme['label']
+        text: root.text_welcome
+        bold: True
+        font_size: dp(30)
+    FunctionButton:
+        pos: root.width-self.width-dp(10), root.height-self.height-dp(80)
+        icon: "theme-light-dark"
+        on_release: 
+            app.show_theme_dialog()
+    MDFloatingActionButton:
+        id: help_button
+        icon: "help"
+        icon_color: app.theme['icon']
+        md_bg_color: app.theme['button']
+        pos: root.width-self.width-dp(10), root.height-self.height-dp(10)
+        on_release: 
+            root.tap_help_start()
+
+    LoginButton:
+        size_hint: .25,None
+        pos_hint: {"center_x": .3, "center_y": .4}
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: dp(40)
+        spacing: dp(20)
+        adaptive_height: True
+        MDGridLayout:
+            pos_hint: {"center_x": .5}
+            size_hint_x: None
+            width: min(self.parent.width - dp(80),dp(500))
+            cols:4
+            adaptive_height: True
+            spacing: dp(10),dp(50)
+            AnchorLayout:
+                FunctionButton:
+                    icon: 'account-plus'
+                    on_release:app.show_screen('ScreenRegister')
+            AnchorLayout:
+                FunctionButton:
+                    icon: 'upload'
+                    on_release:app.show_screen('ScreenUpload')
+            AnchorLayout:
+                FunctionButton:
+                    icon: 'view-array'
+                    on_release:app.show_screen('ScreenBrowse')
+            AnchorLayout:
+                FunctionButton:
+                    icon: 'list-box'
+                    on_release:app.logout()
+            FunctionLabel:
+                text:"Register"
+            FunctionLabel:
+                text:"Upload"
+            FunctionLabel:
+                text:"Browse"
+            FunctionLabel:
+                text:"Logout"

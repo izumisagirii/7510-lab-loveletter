@@ -1,0 +1,6 @@
+kivy
+kivymd
+firebase-admin
+mandel-layouts-3.9 @ https://www.comp.hkbu.edu.hk/~mandel/comp7510/mandel_layouts_3.9-4.3-py3-none-any.whl; python_version >= "3.9" and python_version <= "3.9"
+mandel-layouts-3.10 @ https://www.comp.hkbu.edu.hk/~mandel/comp7510/mandel_layouts_3.10-4.3-py3-none-any.whl; python_version >= "3.10" and python_version <= "3.10"
+mandel-layouts-3.11 @ https://www.comp.hkbu.edu.hk/~mandel/comp7510/mandel_layouts_3.11-4.3-py3-none-any.whl; python_version >= "3.11" and python_version <= "3.11"
